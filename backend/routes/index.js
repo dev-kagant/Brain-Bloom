@@ -1,14 +1,41 @@
-var csrf = require('csurf')
-var csrfProtection = csrf({ cookie: true })
+const csrf = require('csurf')
 const express = require('express');
-const router = express.Router();
 const apiRouter = require('./api')
+
+const router = express.Router();
+const csrfProtection = csrf({ cookie: true })
 
 router.use('/api', apiRouter);
 
-// router.get('/hello/world', csrfProtection, function (req, res) {
-//     res.cookie('token', req.csrfToken);
-//     res.send('Hello World!');
-// });
+router.get("/hello/world", csrfProtection, function (req, res) {
+    res.cookie("XSRF-TOKEN", req.csrfToken());
+    res.send("Hello World!");
+});
+
+if (process.env.NODE_ENV === 'production') {
+    const path = require('path');
+    router.get('/', csrfProtection, (req, res) => {
+        res.cookie('XSRF-TOKEN', req.csrfToken());
+        return res.sendFile(
+            path.resolve(__dirname, '../../frontend', 'build', 'index.html')
+        );
+    });
+
+    router.use(express.static(path.resolve("../frontend/build")));
+
+    router.get('/^(?!\/?api).*/', csrfProtection, (req, res) => {
+        res.cookie('XSRF-TOKEN', req.csrfToken());
+        return res.sendFile(
+            path.resolve(__dirname, '../../frontend', 'build', 'index.html')
+        );
+    });
+}
+
+if (process.env.NODE_ENV !== 'production') {
+    router.get('/api/csrf/restore', csrfProtection, (req, res) => {
+        res.cookie('XSRF-TOKEN', req.csrfToken());
+        return res.json({});
+    });
+}
 
 module.exports = router;
