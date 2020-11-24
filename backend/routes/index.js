@@ -7,10 +7,6 @@ const csrfProtection = csrf({ cookie: true })
 
 router.use('/api', apiRouter);
 
-router.get("/hello/world", csrfProtection, function (req, res) {
-    res.cookie("XSRF-TOKEN", req.csrfToken());
-    res.send("Hello World!");
-});
 
 if (process.env.NODE_ENV === 'production') {
     const path = require('path');

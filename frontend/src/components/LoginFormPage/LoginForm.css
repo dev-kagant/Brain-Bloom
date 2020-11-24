@@ -1,0 +1,11 @@
+form {
+    display: flex;
+    box-sizing: content-box;
+    height: 500px;
+    width: 500px;
+    background-color: aqua;
+}
+
+button{
+    height: auto;
+}
