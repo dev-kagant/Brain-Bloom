@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 
     router.use(express.static('../../frontend/build'));
 
-    router.get('/^(?!\/?api).*/', (req, res) => {
+    router.get(/^(?!\/?api).*/, (req, res) => {
         res.cookie('XSRF-TOKEN', req.csrfToken());
         res.sendFile(
             path.resolve(__dirname, '../../frontend', 'build', 'index.html')
