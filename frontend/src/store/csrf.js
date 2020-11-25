@@ -1,8 +1,6 @@
 import Cookies from 'js-cookie';
 
 
-
-
 async function fetch(url, options = {}) {
     options.method = options.method || 'GET';
     options.headers = options.header || {};
@@ -11,7 +9,7 @@ async function fetch(url, options = {}) {
     if (options.method.toUpperCase() !== 'GET') {
         options.headers['Content-Type'] =
             options.headers['Content-Type'] || 'application/json';
-        options.headers['token'] = Cookies.get('token')
+        options.headers['XSRF-TOKEN'] = Cookies.get('XSRF-TOKEN')
     }
 
     const res = await window.fetch(url, options);
