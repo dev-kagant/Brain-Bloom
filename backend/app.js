@@ -20,7 +20,7 @@ if (!isProduction) {
     app.use(cors())
 }
 app.use(helmet({
-    contentSecurityPoslicy: false
+    contentSecurityPolicy: false
 }));
 
 app.use(
