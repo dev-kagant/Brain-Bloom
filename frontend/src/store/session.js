@@ -25,7 +25,6 @@ export const login = (user) => async (dispatch) => {
             password,
         }),
     });
-    console.log(response)
     dispatch(setUser(response.data.user));
     return response;
 };
@@ -56,7 +55,6 @@ export const logout = () => async (dispatch) => {
 export const restoreUser = () => async dispatch => {
     const res = await fetch('/api/session');
     dispatch(setUser(res.data.user));
-    console.log(res)
     return res;
 };
 

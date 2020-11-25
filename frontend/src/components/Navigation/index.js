@@ -45,13 +45,19 @@ function Navigation({ isLoaded }) {
     return (
         <ul className="page-grid-1 navBar">
             <li className="nav-grid-bloom">
-                <NavLink exact to="/" className="bloomFocus" ><img src="../../../public/logo.png" alt="logo" /></NavLink>
+                <NavLink exact to="/" className="bloomFocus" ></NavLink>
             </li>
-            <li className="nav-grid-links">
+            <ul className="nav-grid-links">
                 {isLoaded && sessionLinks}
-            </li>
+            </ul>
         </ul>
     );
 }
 
 export default Navigation;
+
+
+
+
+
+{/* <img src="../../../public/logo.png" alt="logo" /> */ }
