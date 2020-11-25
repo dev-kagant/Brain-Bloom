@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -13,14 +14,14 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="bigPage">
       <Navigation isLoaded={isLoaded} />
       {/* {isLoaded && (
         <Switch>
 
         </Switch>
       )} */}
-    </>
+    </div>
   );
 }
 

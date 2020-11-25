@@ -29,9 +29,11 @@ function SignupForm() {
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
+            <h1 className="titlestuff">Create An Account</h1>
+            <h4 className="titlestuff">And start learning today!!!</h4>
             <label>
                 Email
-        <input
+            <input
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -40,7 +42,7 @@ function SignupForm() {
             </label>
             <label>
                 Username
-        <input
+            <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -49,7 +51,7 @@ function SignupForm() {
             </label>
             <label>
                 Password
-        <input
+            <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -58,14 +60,14 @@ function SignupForm() {
             </label>
             <label>
                 Confirm Password
-        <input
+            <input
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                 />
             </label>
-            <button type="submit">Sign Up</button>
+            <button type="submit" className="buttonstyle">Sign Up</button>
         </form>
     );
 }

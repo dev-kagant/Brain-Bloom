@@ -1,11 +1,12 @@
-form {
-    display: flex;
-    box-sizing: content-box;
-    height: 500px;
-    width: 500px;
-    background-color: aqua;
-}
 
-button{
-    height: auto;
+.buttonstyle {
+    height: 3em;
+    width: 8em;
+    margin: 5px;
+    background-color:white;
+    border-radius: 1em;
+    font-weight: bolder;
+    box-shadow: 1px 1px 5px  rgb(9, 69, 109);
+    border: 2px solid white;
+    color: rgb(9, 69, 109);
 }

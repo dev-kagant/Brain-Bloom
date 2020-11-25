@@ -25,8 +25,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 function Root() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
+    <Provider store={store} >
+      <BrowserRouter >
         <App />
       </BrowserRouter>
     </Provider>
@@ -34,7 +34,7 @@ function Root() {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode >
     <Root />
   </React.StrictMode>,
   document.getElementById('root'),

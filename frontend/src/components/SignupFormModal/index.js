@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Modal, ModalProvider } from '../../context/Modal';
 import SignupForm from './SignupForm';
 
@@ -7,7 +8,7 @@ function SignupFormModal() {
 
     return (
         <ModalProvider>
-            <button onClick={() => setShowModal(true)}>Sign Up</button>
+            <div onClick={() => setShowModal(true)} className="button">Create An Account</div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <SignupForm />

@@ -1,0 +1,140 @@
+.navBar {
+    display: grid;
+    padding: 0px;
+    margin: 0px;
+    overflow: visible;
+    /* background-color: rgba(252, 165, 144, 0.568); */
+    background-color: rgba(190, 240, 240, 0.253);
+    grid-template-columns: 1fr 7fr;
+    grid-template-areas:
+        "bloom links";
+}
+
+.nav-grid-bloom{
+    display: flex;
+    grid-area: "bloom";
+    justify-content: flex-end;
+    align-items: center;
+    height: 4.5em;
+    font: 16px bold Verdana;
+    color:rgb(9, 69, 109);
+    /* border: 5px solid blue; */
+}
+
+.bloomFocus {
+    font: 25px Verdana;
+    font-weight: 15px;
+    text-decoration-line: none;
+    color: rgb(9, 69, 109);
+}
+
+.nav-grid-links{
+    grid-area: "links";
+    display: grid;
+    margin-top: 0;
+    grid-template-columns: 6fr 1fr 1fr;
+    grid-template-areas:
+    "others access signup";
+}
+
+/* ==================================================== */
+
+.link-grid-1{
+    grid-area: "others";
+    display: flex;
+    justify-content: flex-end;
+    font: 10pt Verdana ;
+    font-weight: bold;
+    color:rgb(9, 69, 109);
+    /* border: 5px solid blue; */
+}
+.others-1{
+    grid-area: "search";
+    padding-top: 25px;
+    padding-left: 6em;
+    padding-right: 8em;
+}
+.others-2{
+    grid-area: "stuff";
+    padding-top: 25px;
+    padding-left: 6em;
+    padding-right: 4em;
+}
+.others-3{
+    grid-area: "about";
+    padding-top: 25px;
+    padding-left: 4em;
+    padding-right: 8em;
+}
+/* ==================================================== */
+
+.link-grid-2{
+    grid-area: "access";
+    background-color: rgba(190, 240, 240, 0.5);
+    height: auto;
+    /* border: 5px solid blue; */
+}
+
+.link-grid-3{
+    grid-area: "signup";
+    height: inherit;
+    /* background-color:rgb(190, 240, 240); */
+    /* border: 5px solid blue; */
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+/* #bloom {
+
+  } */
+
+
+.button {
+    /* border: none; */
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    background-color: none;
+    color: rgb(9, 69, 109);
+    font: 14px Verdana;
+    font-weight: bold;
+}
+
+.button2 {
+    /* border: none; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    /* padding-bottom: 30px; */
+    background-color: none;
+    color: rgb(9, 69, 109);
+    font: 14px Verdana;
+    font-weight: bold;
+}
+
+.profile-dropdown{
+    padding: 30px;
+    background-color: rgba(9, 69, 109, 0.479);
+    border-radius: .5em;
+}
+
+.button3{
+    margin: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: .5em;
+    color: rgb(9, 69, 109);
+    font: 14px Verdana;
+    font-weight: bold;
+}
+
+.fa-hippo{
+    font-size: 2em;
+    color: rgb(9, 69, 109);
+}

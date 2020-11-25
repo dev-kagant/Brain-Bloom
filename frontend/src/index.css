@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,72 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+body{
+  padding: 0;
+  margin: 0;
+}
+
+
+.bigPage{
+  display: grid;
+  /* border: 5px solid rgb(9, 69, 109); */
+  height: 100em;
+  padding: 0em;
+  margin: 0;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+      "NavBar"
+      "MainContent"
+      "Footer";
+}
+
+.page-grid-1{
+  grid-area: "NavBar";
+  /* border: 2px solid rgba(252, 165, 144, 0.932); */
+  max-height: 5em;
+  overflow: hidden;
+}
+
+.page-grid-2{
+  grid-area: "MainContent";
+  /* border: 4px solid black; */
+}
+.page-grid-3{
+  grid-area: "Footer";
+  /* border: 4px solid black; */
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  border-radius: .2em;
+  box-shadow: 2px 2px 15px rgb(190, 240, 240);
+  background-color: rgb(190, 240, 240);
+  color: rgb(9, 69, 109);
+  font: 20px Verdana;
+}
+
+label{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: rgb(9, 69, 109);
+  margin: 5px;
+}
+
+input{
+  padding: 8px;
+  border: none;
+  width: 400px;
+  border: 2px solid rgb(9, 69, 109);
+  background-color: white;
+  border-radius: .5em;
 }
