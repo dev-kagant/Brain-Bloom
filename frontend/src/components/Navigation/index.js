@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import CreateCourseModal from '../CreateCourseModal';
 import './Navigation.css';
 
 
@@ -50,6 +51,9 @@ function Navigation({ isLoaded }) {
             <ul className="nav-grid-links">
                 {isLoaded && sessionLinks}
             </ul>
+            <li className="link-grid-3">
+                <CreateCourseModal />
+            </li>
         </ul>
     );
 }
@@ -60,4 +64,4 @@ export default Navigation;
 
 
 
-{/* <img src="../../../public/logo.png" alt="logo" /> */ }
+// {/* <img src="../../../public/logo.png" alt="logo" /> */ }

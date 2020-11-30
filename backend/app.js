@@ -33,6 +33,11 @@ app.use(
     })
 );
 
+// app.use((req, res, next) => {
+//     req.userLoggedIn = res.locals.authenticated ? true : false;
+//     next();
+// });
+
 app.use(routes);
 
 app.use((_req, _res, next) => {

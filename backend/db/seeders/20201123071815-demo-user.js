@@ -21,13 +21,23 @@ module.exports = {
         username: 'FakeUser2',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
       },
+      {
+        email: 'ashley@gant.com',
+        username: 'ashley',
+        hashedPassword: bcrypt.hashSync('ashley'),
+      },
+      {
+        email: 'john@anthony.com',
+        username: 'john',
+        hashedPassword: bcrypt.hashSync('john'),
+      },
     ], {});
   },
 
   down: (queryInterface, Sequelize) => {
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete('Users', {
-      username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
+      username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2', 'ashley', 'john'] }
     }, {});
   }
 };

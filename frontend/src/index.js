@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import * as sessionActions from './store/session';
+import * as courseActions from './store/course'
 
 import fetch, { restoreCSRF } from './store/csrf';
 import configureStore from './store';
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.csrfFetch = fetch;
   window.store = store;
   window.sessionActions = sessionActions;
+  window.courseActions = courseActions;
 }
 
 
