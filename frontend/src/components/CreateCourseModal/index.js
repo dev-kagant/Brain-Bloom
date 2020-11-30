@@ -7,7 +7,7 @@ function CreateCourseModal() {
 
     return (
         <ModalProvider>
-            <div onClick={() => setCourseModal(true)} className="button">Create An Course</div>
+            <div onClick={() => setCourseModal(true)} className="button">Create A Course</div>
             {courseModal && (
                 <Modal onClose={() => setCourseModal(false)}>
                     <CreateCourse />

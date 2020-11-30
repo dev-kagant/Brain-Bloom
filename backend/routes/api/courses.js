@@ -18,18 +18,11 @@ const validateCourse = [
     handleValidationErrors,
 ];
 
-router.get(
+router.post(
     '/',
     asyncHandler(
         async (req, res) => {
-            const id = res.locals.user.id;
-            let myCourses = await CourseList.findAll({
-                where: {
-                    userId: id
-                },
-                include: [Course],
-                order: ["updatedAt"],
-            });
+            let myCourses = await CourseList.findByPk(req.body.userId);
             console.log(myCourses);
             myCourses = myCourses.map(course => course.toJSON());
 
@@ -40,20 +33,19 @@ router.get(
         })
 )
 
-router.post(
-    "/",
-    validateCourse,
-    asyncHandler(async (req, res) => {
-        debugger
-        const { userId, courseName, description } = req.body;
-        const course = await Course.create({
-            userId,
-            courseName,
-            description,
-        });
-        res.redirect('/');
-    })
-);
+// router.post(
+//     "/",
+//     validateCourse,
+//     asyncHandler(async (req, res) => {
+//         const { userId, courseName, description } = req.body;
+//         await Course.create({
+//             userId,
+//             courseName,
+//             description,
+//         });
+//         res.redirect('/');
+//     })
+// );
 
 
 router.delete(

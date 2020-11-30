@@ -12,7 +12,6 @@ function CreateCourse() {
     const userId = useSelector(state => state.session.user.id)
 
     const handleSubmit = (e) => {
-        console.log('Maybe here')
         e.preventDefault();
         if (courseName && description) {
             setErrors([]);

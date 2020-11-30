@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 
 const ADD_COURSE = 'course/addCourse';
 const REMOVE_COURSE = 'course/removeCourse';
+const GET_COURSES = 'course/getCourses'
 const ADD_DECK = 'course/addDeck';
 const REMOVE_DECK = 'course/removeDeck';
 const ADD_CARD = 'course/addCard';
@@ -25,6 +26,12 @@ const removeCourse = (courseId) => {
     }
 }
 
+const getCourse = (courses) => {
+    return {
+        type: GET_COURSES,
+        courses,
+    }
+}
 
 export const addingCourse = (course) => async (dispatch) => {
     const { userId, courseName, description } = course;
@@ -49,6 +56,20 @@ export const removingCourse = (id) => async (dispatch) => {
     return response;
 }
 
+
+export const gettingCourses = ({ userId }) => async (dispatch) => {
+    await fetch('/api/courses', {
+        method: 'POST',
+        body: JSON.stringify(
+            { userId }
+        )
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            dispatch(getCourse(data))
+        })
+}
+
 const initialState = { course: [] }
 
 const courseReducer = (state = initialState, action) => {
@@ -60,6 +81,8 @@ const courseReducer = (state = initialState, action) => {
         case REMOVE_COURSE:
             const idx = action.courseId
             return [...state.slice(0, idx), ...state.slice(idx + 1)];
+        case GET_COURSES:
+            return [...action.courses]
         default:
             return state;
     }
