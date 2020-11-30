@@ -4,7 +4,7 @@ import './Footer.css'
 
 function Footer() {
     return (
-        <div className="maindiv">
+        <div className="page-grid-3 maindiv">
             <div>
                 <h4>Creator</h4>
                 <ul>

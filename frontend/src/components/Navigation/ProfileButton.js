@@ -29,21 +29,17 @@ function ProfileButton({ user }) {
     };
 
     return (
-        <div className="button2" >
+        <div className="link-grid-2 button2" >
             <div onClick={openMenu} >
                 <i className="fas fa-hippo"></i>
             </div>
             {user.username}
             {
                 showMenu && (
-                    <ul className="profile-dropdown">
-                        <li>
-                            <button className="button3">My Account</button>
-                        </li>
-                        <li>
-                            <button onClick={logout} className="button3">Log Out</button>
-                        </li>
-                    </ul>
+                    <div className="profile-dropdown">
+                        <button className="button3">My Account</button>
+                        <button onClick={logout} className="button3">Log Out</button>
+                    </div>
                 )
             }
         </div>

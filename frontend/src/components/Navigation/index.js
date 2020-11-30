@@ -6,11 +6,14 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import CreateCourseModal from '../CreateCourseModal';
 import LandingPage from '../LandingPage';
+import * as logo from "../../images/2020-11-24.png"
 import './Navigation.css';
 
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
+
+    let image; //create a thunk to grab image
 
     let sessionLinks;
     if (sessionUser) {
@@ -21,7 +24,7 @@ function Navigation({ isLoaded }) {
                     <li className="others-2">My Classes</li>
                     <li className="others-3">About</li>
                 </div>
-                <ProfileButton user={sessionUser} className="link-grid-2" />
+                <ProfileButton user={sessionUser} />
                 <div className="link-grid-3 button">Upgrade</div>
             </>
         );
@@ -47,7 +50,7 @@ function Navigation({ isLoaded }) {
     return (
         <ul className="page-grid-1 navBar">
             <li className="nav-grid-bloom">
-                <NavLink exact to="/" className="bloomFocus" ></NavLink>
+                <NavLink exact to="/" className="bloomFocus" ><img src={logo} alt="logo" /></NavLink>
             </li>
             <ul className="nav-grid-links">
                 {isLoaded && sessionLinks}
