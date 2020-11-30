@@ -1,0 +1,9 @@
+.main {
+    width: 100%;
+    height: 100vh;
+    padding: 40vh;
+}
+
+.pic {
+    background: url(https://unsplash.com/photos/s9CC2SKySJM?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink);
+}

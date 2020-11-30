@@ -29,6 +29,7 @@ function CreateCourse() {
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
+            {/* <NavLink onClick={render = () => }>Create a Course</NavLink> */}
             <h1 className="titlestuff">Create An Course</h1>
             <h4 className="titlestuff">Start by creating a course!!!</h4>
             <label>
